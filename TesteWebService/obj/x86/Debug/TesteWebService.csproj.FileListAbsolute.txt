@@ -1,0 +1,11 @@
+C:\Documents and Settings\Administrador\Meus documentos\Google Drive\Projetos\TesteWebService\TesteWebService\bin\Debug\TesteWebService.exe.config
+C:\Documents and Settings\Administrador\Meus documentos\Google Drive\Projetos\TesteWebService\TesteWebService\bin\Debug\TesteWebService.exe
+C:\Documents and Settings\Administrador\Meus documentos\Google Drive\Projetos\TesteWebService\TesteWebService\bin\Debug\TesteWebService.pdb
+C:\Documents and Settings\Administrador\Meus documentos\Google Drive\Projetos\TesteWebService\TesteWebService\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrador\Meus documentos\Google Drive\Projetos\TesteWebService\TesteWebService\obj\x86\Debug\TesteWebService.Form1.resources
+C:\Documents and Settings\Administrador\Meus documentos\Google Drive\Projetos\TesteWebService\TesteWebService\obj\x86\Debug\TesteWebService.Properties.Resources.resources
+C:\Documents and Settings\Administrador\Meus documentos\Google Drive\Projetos\TesteWebService\TesteWebService\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Administrador\Meus documentos\Google Drive\Projetos\TesteWebService\TesteWebService\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Administrador\Meus documentos\Google Drive\Projetos\TesteWebService\TesteWebService\obj\x86\Debug\TesteWebService.exe
+C:\Documents and Settings\Administrador\Meus documentos\Google Drive\Projetos\TesteWebService\TesteWebService\obj\x86\Debug\TesteWebService.pdb
+C:\Documents and Settings\Administrador\Meus documentos\Google Drive\Projetos\TesteWebService\TesteWebService\obj\x86\Debug\TesteWebService.Form2.resources

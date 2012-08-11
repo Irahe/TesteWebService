@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ncbi="http://www.ncbi.nlm.nih.gov" xmlns:tns="http://www.ncbi.nlm.nih.gov/soap/eutils/efetch_seq" elementFormDefault="qualified" targetNamespace="http://www.ncbi.nlm.nih.gov/soap/eutils/efetch_seq" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="TSeq">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="TSeq_seqtype">
+          <xs:complexType>
+            <xs:attribute name="value" use="required">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="nucleotide" />
+                  <xs:enumeration value="protein" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="TSeq_gi" type="xs:integer" />
+        <xs:element minOccurs="0" name="TSeq_accver" type="xs:string" />
+        <xs:element minOccurs="0" name="TSeq_sid" type="xs:string" />
+        <xs:element minOccurs="0" name="TSeq_local" type="xs:string" />
+        <xs:element minOccurs="0" name="TSeq_taxid" type="xs:integer" />
+        <xs:element minOccurs="0" name="TSeq_orgname" type="xs:string" />
+        <xs:element name="TSeq_defline" type="xs:string" />
+        <xs:element name="TSeq_length" type="xs:integer" />
+        <xs:element name="TSeq_sequence" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TSeqSet">
+    <xs:complexType>
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="tns:TSeq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GBSet">
+    <xs:complexType>
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="tns:GBSeq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GBSeq">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="GBSeq_locus" type="xs:string" />
+        <xs:element name="GBSeq_length" type="xs:integer" />
+        <xs:element minOccurs="0" name="GBSeq_strandedness" type="xs:string" />
+        <xs:element name="GBSeq_moltype" type="xs:string" />
+        <xs:element minOccurs="0" name="GBSeq_topology" type="xs:string" />
+        <xs:element name="GBSeq_division" type="xs:string" />
+        <xs:element name="GBSeq_update-date" type="xs:string" />
+        <xs:element minOccurs="0" name="GBSeq_create-date" type="xs:string" />
+        <xs:element minOccurs="0" name="GBSeq_update-release" type="xs:string" />
+        <xs:element minOccurs="0" name="GBSeq_create-release" type="xs:string" />
+        <xs:element name="GBSeq_definition" type="xs:string" />
+        <xs:element minOccurs="0" name="GBSeq_primary-accession" type="xs:string" />
+        <xs:element minOccurs="0" name="GBSeq_entry-version" type="xs:string" />
+        <xs:element minOccurs="0" name="GBSeq_accession-version" type="xs:string" />
+        <xs:element minOccurs="0" name="GBSeq_other-seqids">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:GBSeqid" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="GBSeq_secondary-accessions">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:GBSecondary-accn" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="GBSeq_project" type="xs:string" />
+        <xs:element minOccurs="0" name="GBSeq_keywords">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:GBKeyword" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="GBSeq_segment" type="xs:string" />
+        <xs:element minOccurs="0" name="GBSeq_source" type="xs:string" />
+        <xs:element minOccurs="0" name="GBSeq_organism" type="xs:string" />
+        <xs:element minOccurs="0" name="GBSeq_taxonomy" type="xs:string" />
+        <xs:element minOccurs="0" name="GBSeq_references">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:GBReference" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="GBSeq_comment" type="xs:string" />
+        <xs:element minOccurs="0" name="GBSeq_comment-set">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:GBComment" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="GBSeq_struc-comments">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:GBStrucComment" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="GBSeq_primary" type="xs:string" />
+        <xs:element minOccurs="0" name="GBSeq_source-db" type="xs:string" />
+        <xs:element minOccurs="0" name="GBSeq_database-reference" type="xs:string" />
+        <xs:element minOccurs="0" name="GBSeq_feature-table">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:GBFeature" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="GBSeq_feature-set">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:GBFeatureSet" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="GBSeq_sequence" type="xs:string" />
+        <xs:element minOccurs="0" name="GBSeq_contig" type="xs:string" />
+        <xs:element minOccurs="0" name="GBSeq_alt-seq">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:GBAltSeqData" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GBSeqid" type="xs:string" />
+  <xs:element name="GBSecondary-accn" type="xs:string" />
+  <xs:element name="GBKeyword" type="xs:string" />
+  <xs:element name="GBReference">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="GBReference_reference" type="xs:string" />
+        <xs:element minOccurs="0" name="GBReference_position" type="xs:string" />
+        <xs:element minOccurs="0" name="GBReference_authors">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:GBAuthor" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="GBReference_consortium" type="xs:string" />
+        <xs:element minOccurs="0" name="GBReference_title" type="xs:string" />
+        <xs:element name="GBReference_journal" type="xs:string" />
+        <xs:element minOccurs="0" name="GBReference_xref">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:GBXref" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="GBReference_pubmed" type="xs:integer" />
+        <xs:element minOccurs="0" name="GBReference_remark" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GBAuthor" type="xs:string" />
+  <xs:element name="GBXref">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="GBXref_dbname" type="xs:string" />
+        <xs:element name="GBXref_id" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GBComment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GBComment_type" type="xs:string" />
+        <xs:element name="GBComment_paragraphs">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:GBCommentParagraph" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GBCommentParagraph">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="GBCommentParagraph_items">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:GBCommentItem" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GBCommentItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GBCommentItem_value" type="xs:string" />
+        <xs:element minOccurs="0" name="GBCommentItem_url" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GBStrucComment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GBStrucComment_name" type="xs:string" />
+        <xs:element name="GBStrucComment_items">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:GBStrucCommentItem" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GBStrucCommentItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GBStrucCommentItem_tag" type="xs:string" />
+        <xs:element minOccurs="0" name="GBStrucCommentItem_value" type="xs:string" />
+        <xs:element minOccurs="0" name="GBStrucCommentItem_url" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GBFeatureSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GBFeatureSet_annot-source" type="xs:string" />
+        <xs:element name="GBFeatureSet_features">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:GBFeature" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GBFeature">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="GBFeature_key" type="xs:string" />
+        <xs:element name="GBFeature_location" type="xs:string" />
+        <xs:element minOccurs="0" name="GBFeature_intervals">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:GBInterval" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="GBFeature_operator" type="xs:string" />
+        <xs:element minOccurs="0" name="GBFeature_partial5">
+          <xs:complexType>
+            <xs:attribute name="value" use="required">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="true" />
+                  <xs:enumeration value="false" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="GBFeature_partial3">
+          <xs:complexType>
+            <xs:attribute name="value" use="required">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="true" />
+                  <xs:enumeration value="false" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="GBFeature_quals">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:GBQualifier" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="GBFeature_xrefs">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:GBXref" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GBInterval">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GBInterval_from" type="xs:integer" />
+        <xs:element minOccurs="0" name="GBInterval_to" type="xs:integer" />
+        <xs:element minOccurs="0" name="GBInterval_point" type="xs:integer" />
+        <xs:element minOccurs="0" name="GBInterval_iscomp">
+          <xs:complexType>
+            <xs:attribute name="value" use="required">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="true" />
+                  <xs:enumeration value="false" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="GBInterval_interbp">
+          <xs:complexType>
+            <xs:attribute name="value" use="required">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="true" />
+                  <xs:enumeration value="false" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="GBInterval_accession" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GBQualifier">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="GBQualifier_name" type="xs:string" />
+        <xs:element minOccurs="0" name="GBQualifier_value" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GBAltSeqData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="GBAltSeqData_name" type="xs:string" />
+        <xs:element minOccurs="0" name="GBAltSeqData_items">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:GBAltSeqItem" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GBAltSeqItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GBAltSeqItem_interval">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="tns:GBInterval" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="GBAltSeqItem_isgap">
+          <xs:complexType>
+            <xs:attribute name="value" use="required">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="true" />
+                  <xs:enumeration value="false" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="GBAltSeqItem_gap-length" type="xs:integer" />
+        <xs:element minOccurs="0" name="GBAltSeqItem_gap-type" type="xs:string" />
+        <xs:element minOccurs="0" name="GBAltSeqItem_gap-linkage" type="xs:string" />
+        <xs:element minOccurs="0" name="GBAltSeqItem_gap-comment" type="xs:string" />
+        <xs:element minOccurs="0" name="GBAltSeqItem_first-accn" type="xs:string" />
+        <xs:element minOccurs="0" name="GBAltSeqItem_last-accn" type="xs:string" />
+        <xs:element minOccurs="0" name="GBAltSeqItem_value" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="INSDSet">
+    <xs:complexType>
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="tns:INSDSeq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="INSDSeq">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="INSDSeq_locus" type="xs:string" />
+        <xs:element name="INSDSeq_length" type="xs:integer" />
+        <xs:element minOccurs="0" name="INSDSeq_strandedness" type="xs:string" />
+        <xs:element name="INSDSeq_moltype" type="xs:string" />
+        <xs:element minOccurs="0" name="INSDSeq_topology" type="xs:string" />
+        <xs:element name="INSDSeq_division" type="xs:string" />
+        <xs:element name="INSDSeq_update-date" type="xs:string" />
+        <xs:element minOccurs="0" name="INSDSeq_create-date" type="xs:string" />
+        <xs:element minOccurs="0" name="INSDSeq_update-release" type="xs:string" />
+        <xs:element minOccurs="0" name="INSDSeq_create-release" type="xs:string" />
+        <xs:element name="INSDSeq_definition" type="xs:string" />
+        <xs:element minOccurs="0" name="INSDSeq_primary-accession" type="xs:string" />
+        <xs:element minOccurs="0" name="INSDSeq_entry-version" type="xs:string" />
+        <xs:element minOccurs="0" name="INSDSeq_accession-version" type="xs:string" />
+        <xs:element minOccurs="0" name="INSDSeq_other-seqids">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:INSDSeqid" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="INSDSeq_secondary-accessions">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:INSDSecondary-accn" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="INSDSeq_project" type="xs:string" />
+        <xs:element minOccurs="0" name="INSDSeq_keywords">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:INSDKeyword" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="INSDSeq_segment" type="xs:string" />
+        <xs:element minOccurs="0" name="INSDSeq_source" type="xs:string" />
+        <xs:element minOccurs="0" name="INSDSeq_organism" type="xs:string" />
+        <xs:element minOccurs="0" name="INSDSeq_taxonomy" type="xs:string" />
+        <xs:element minOccurs="0" name="INSDSeq_references">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:INSDReference" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="INSDSeq_comment" type="xs:string" />
+        <xs:element minOccurs="0" name="INSDSeq_comment-set">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:INSDComment" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="INSDSeq_struc-comments">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:INSDStrucComment" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="INSDSeq_primary" type="xs:string" />
+        <xs:element minOccurs="0" name="INSDSeq_source-db" type="xs:string" />
+        <xs:element minOccurs="0" name="INSDSeq_database-reference" type="xs:string" />
+        <xs:element minOccurs="0" name="INSDSeq_feature-table">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:INSDFeature" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="INSDSeq_feature-set">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:INSDFeatureSet" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="INSDSeq_sequence" type="xs:string" />
+        <xs:element minOccurs="0" name="INSDSeq_contig" type="xs:string" />
+        <xs:element minOccurs="0" name="INSDSeq_alt-seq">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:INSDAltSeqData" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="INSDSeqid" type="xs:string" />
+  <xs:element name="INSDSecondary-accn" type="xs:string" />
+  <xs:element name="INSDKeyword" type="xs:string" />
+  <xs:element name="INSDReference">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="INSDReference_reference" type="xs:string" />
+        <xs:element minOccurs="0" name="INSDReference_position" type="xs:string" />
+        <xs:element minOccurs="0" name="INSDReference_authors">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:INSDAuthor" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="INSDReference_consortium" type="xs:string" />
+        <xs:element minOccurs="0" name="INSDReference_title" type="xs:string" />
+        <xs:element name="INSDReference_journal" type="xs:string" />
+        <xs:element minOccurs="0" name="INSDReference_xref">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:INSDXref" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="INSDReference_pubmed" type="xs:integer" />
+        <xs:element minOccurs="0" name="INSDReference_remark" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="INSDAuthor" type="xs:string" />
+  <xs:element name="INSDXref">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="INSDXref_dbname" type="xs:string" />
+        <xs:element name="INSDXref_id" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="INSDComment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="INSDComment_type" type="xs:string" />
+        <xs:element name="INSDComment_paragraphs">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:INSDCommentParagraph" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="INSDCommentParagraph">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="INSDCommentParagraph_items">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:INSDCommentItem" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="INSDCommentItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="INSDCommentItem_value" type="xs:string" />
+        <xs:element minOccurs="0" name="INSDCommentItem_url" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="INSDStrucComment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="INSDStrucComment_name" type="xs:string" />
+        <xs:element name="INSDStrucComment_items">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:INSDStrucCommentItem" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="INSDStrucCommentItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="INSDStrucCommentItem_tag" type="xs:string" />
+        <xs:element minOccurs="0" name="INSDStrucCommentItem_value" type="xs:string" />
+        <xs:element minOccurs="0" name="INSDStrucCommentItem_url" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="INSDFeatureSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="INSDFeatureSet_annot-source" type="xs:string" />
+        <xs:element name="INSDFeatureSet_features">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:INSDFeature" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="INSDFeature">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="INSDFeature_key" type="xs:string" />
+        <xs:element name="INSDFeature_location" type="xs:string" />
+        <xs:element minOccurs="0" name="INSDFeature_intervals">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:INSDInterval" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="INSDFeature_operator" type="xs:string" />
+        <xs:element minOccurs="0" name="INSDFeature_partial5">
+          <xs:complexType>
+            <xs:attribute name="value" use="required">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="true" />
+                  <xs:enumeration value="false" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="INSDFeature_partial3">
+          <xs:complexType>
+            <xs:attribute name="value" use="required">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="true" />
+                  <xs:enumeration value="false" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="INSDFeature_quals">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:INSDQualifier" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="INSDFeature_xrefs">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:INSDXref" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="INSDInterval">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="INSDInterval_from" type="xs:integer" />
+        <xs:element minOccurs="0" name="INSDInterval_to" type="xs:integer" />
+        <xs:element minOccurs="0" name="INSDInterval_point" type="xs:integer" />
+        <xs:element minOccurs="0" name="INSDInterval_iscomp">
+          <xs:complexType>
+            <xs:attribute name="value" use="required">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="true" />
+                  <xs:enumeration value="false" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="INSDInterval_interbp">
+          <xs:complexType>
+            <xs:attribute name="value" use="required">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="true" />
+                  <xs:enumeration value="false" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="INSDInterval_accession" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="INSDQualifier">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="INSDQualifier_name" type="xs:string" />
+        <xs:element minOccurs="0" name="INSDQualifier_value" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="INSDAltSeqData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="INSDAltSeqData_name" type="xs:string" />
+        <xs:element minOccurs="0" name="INSDAltSeqData_items">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:INSDAltSeqItem" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="INSDAltSeqItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="INSDAltSeqItem_interval">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="tns:INSDInterval" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="INSDAltSeqItem_isgap">
+          <xs:complexType>
+            <xs:attribute name="value" use="required">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="true" />
+                  <xs:enumeration value="false" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="INSDAltSeqItem_gap-length" type="xs:integer" />
+        <xs:element minOccurs="0" name="INSDAltSeqItem_gap-type" type="xs:string" />
+        <xs:element minOccurs="0" name="INSDAltSeqItem_gap-linkage" type="xs:string" />
+        <xs:element minOccurs="0" name="INSDAltSeqItem_gap-comment" type="xs:string" />
+        <xs:element minOccurs="0" name="INSDAltSeqItem_first-accn" type="xs:string" />
+        <xs:element minOccurs="0" name="INSDAltSeqItem_last-accn" type="xs:string" />
+        <xs:element minOccurs="0" name="INSDAltSeqItem_value" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
